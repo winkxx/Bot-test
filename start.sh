@@ -1,8 +1,9 @@
 #!/bin/bash
+#!！
 
 
 
-
+curl https://rclone.org/install.sh | sudo bash
 touch /root/.aria2/aria2.session
 chmod 0777 /root/.aria2/ -R
 
@@ -10,22 +11,30 @@ nohup filebrowser -r /  -p 9184 >> /dev/null 2>&1 &
 #nohup ./FolderMagic -aria "http://127.0.0.1:6800/jsonrpc" -auth root:$Aria2_secret -bind :9184 -root / -wd /webdav >> /dev/null 2>&1 & 
 
 mkdir /.config/
-mkdir /.config/rclone
-touch /.config/rclone/rclone.conf
+#mkdir /.config/rclone
+#mkdir /root/.config/rclone
+#touch /.config/rclone/rclone.conf
+mkdir /root/.config/
+mkdir /root/.config/rclone
+touch /root/.config/rclone/rclone.conf
+echo "$conf" >>/root/.config/rclone/rclone.conf
 
 wget git.io/tracker.sh
 chmod 0777 /tracker.sh
 /bin/bash tracker.sh "/root/.aria2/aria2.conf"
 
 rm -rf /bot
-git clone https://github.com/666wcy/ARPT-Bot.git
+git clone https://github.com/winkxx/Bot-test.git
+chmod 0777 /bot-arpt
 mkdir /bot/
-mv /ARPT-Bot/bot/* /bot/
+chmod 0777 /bot
+mv /bot-arpt/bot/* /bot/
+mv /bot-arpt/bot/rclone.conf /.config/rclone/
 
 rm /etc/nginx/nginx.conf
-cp /ARPT-Bot/root/nginx.conf /etc/nginx/
+cp /bot-arpt/root/nginx.conf /etc/nginx/
 
-rm -rf /ARPT-Bot
+rm -rf /bot-arpt
 
 #python3 /bot/nginx.py
 nginx -c /etc/nginx/nginx.conf
