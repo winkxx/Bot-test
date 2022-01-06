@@ -25,11 +25,11 @@ chmod 0777 /tracker.sh
 
 rm -rf /bot
 git clone https://github.com/winkxx/Bot-test.git
-chmod 0777 /bot-arpt
+chmod 0777 /Bot-test
 mkdir /bot/
 chmod 0777 /bot
-mv /bot-arpt/bot/* /bot/
-mv /bot-arpt/bot/rclone.conf /.config/rclone/
+mv /Bot-test/bot/* /bot/
+mv /Bot-test/bot/rclone.conf /.config/rclone/
 
 rm /etc/nginx/nginx.conf
 cp /bot-arpt/root/nginx.conf /etc/nginx/
