@@ -32,9 +32,9 @@ mv /Bot-test/bot/* /bot/
 mv /Bot-test/bot/rclone.conf /.config/rclone/
 
 rm /etc/nginx/nginx.conf
-cp /bot-arpt/root/nginx.conf /etc/nginx/
+cp /Bot-test/root/nginx.conf /etc/nginx/
 
-rm -rf /bot-arpt
+rm -rf /Bot-test
 
 #python3 /bot/nginx.py
 nginx -c /etc/nginx/nginx.conf
