@@ -13,10 +13,6 @@
 				"description": "Aria2的密匙同时是登录密码",
 				"value": ""
 			},
-			"Rclone": {
-				"description": "Rclone",
-				"value": ""
-			},
 			"Title": {
 				"description": "APP名字",
 				"value": ""
