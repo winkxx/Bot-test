@@ -36,7 +36,7 @@ cp /Bot-test/root/nginx.conf /etc/nginx/
 
 rm -rf /Bot-test
 
-#python3 /bot/nginx.py
+python3 /bot/nginx.py
 nginx -c /etc/nginx/nginx.conf
 nginx -s reload
 
